@@ -1,0 +1,7 @@
+*.*
+src
+front
+.mvn
+.idea
+target/**
+!target/*.jar

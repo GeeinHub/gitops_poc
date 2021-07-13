@@ -1,0 +1,32 @@
+.container-th .container-label {
+  color: #00192D;
+  font-family: Mulish;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 20px;
+  letter-spacing: 0px;
+  text-align: left;
+}
+.container-th {
+  width: 145px;
+  float: left;
+}
+.container-th .content {
+  color: #829AAC;
+  font-family: Mulish;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  letter-spacing: 0px;
+  text-align: left;
+}
+.container-detail {
+  border-radius: 4px;
+  background: #FFFFFF;
+  border: 1px solid #DCE3F1;
+  padding: 10px 10px;
+  margin-bottom: 10px;
+}
+.containers-overview {
+  margin-top: 20px;
+}

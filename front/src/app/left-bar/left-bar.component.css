@@ -1,0 +1,32 @@
+.container{
+  width: 200px;
+  float: left;
+  padding: 0;
+}
+.active {
+  background: #DCE3F1;
+  border-left: 4px solid #F23E57;
+}
+
+.active a{
+  color: #272459;
+  font-weight: 600;
+}
+.active i{
+  margin-left: 11px;
+}
+i{
+  width: 20px;
+  margin-left: 15px;
+}
+li{
+  line-height: 30px;
+}
+a{
+  color: #9797B6;
+  font-size: 14px;
+}
+.container{
+  background: #FFFFFF;
+  height: 100%;
+}

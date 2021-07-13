@@ -1,0 +1,427 @@
+<div class="general-info">
+  <div class="title">
+    <span>General Info.</span>
+  </div>
+  <form class="form-horizontal" id = "my_form_active">
+    <div class="form-group">
+      <div class="row">
+        <div class="col-lg-4">
+          <label class="input-label">So#<span class="must-filled">*</span></label>
+          <input type="text" class="form-control input-sm" [(ngModel)]="soDto.soNumber" name="soNumber" placeholder="So Number" [disabled]="disable">
+        </div>
+        <div class="col-lg-4">
+          <label class="input-label">Customer<span class="must-filled">*</span></label>
+          <input type="text" class="form-control input-sm" [(ngModel)]="soDto.customer" name="customer" placeholder="Customer" [disabled]="disable">
+        </div>
+        <div class="col-lg-4">
+          <label class="input-label">Status</label>
+          <input type="text" class="form-control input-sm" [(ngModel)]="soDto.status" name="status" placeholder="Status" [disabled]="disable">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-4">
+          <label class="input-label">Receive Date</label>
+          <input type="date" class="form-control input-sm" [(ngModel)]="soDto.receiveDate" name="receiveDate" placeholder="Receive Date" [disabled]="disable">
+        </div>
+        <div class="col-lg-4">
+          <label class="input-label">Affiliate</label>
+          <input type="text" class="form-control input-sm" [(ngModel)]="soDto.affiliate" name="Affiliate" placeholder="Affiliate">
+        </div>
+        <div class="col-lg-4">
+          <label class="input-label">USCI</label>
+          <input type="text" class="form-control input-sm" [(ngModel)]="soDto.usci" name="usci" placeholder="USCI">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-4">
+          <label class="input-label">Business Type<span class="must-filled">*</span></label>
+          <input type="text" class="form-control input-sm" [(ngModel)]="soDto.businessType" name="businessType" placeholder="Business Type">
+        </div>
+        <div class="col-lg-4">
+          <label class="input-label">Cargo Type<span class="must-filled">*</span></label>
+          <input type="text" class="form-control input-sm" [(ngModel)]="soDto.cargoType" name="cargoType" placeholder="Cargo Type">
+        </div>
+        <div class="col-lg-4">
+          <label class="input-label">Freight<span class="must-filled">*</span></label>
+          <input type="text" class="form-control input-sm" [(ngModel)]="soDto.freight" name="freight" placeholder="Freight">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-4">
+          <label class="input-label">Transport Mode<span class="must-filled">*</span></label>
+          <input type="text" class="form-control input-sm" [(ngModel)]="soDto.transportMode" name="transportMode" placeholder="Transport Mode">
+        </div>
+        <div class="col-lg-4">
+          <label class="input-label">Place Of Receipt<span class="must-filled">*</span></label>
+          <input type="text" class="form-control input-sm" [(ngModel)]="soDto.placeOfReceiptCity" name="placeOfReceiptCity" placeholder="Place Of Receipt City">
+          <input type="date" class="form-control input-sm" [(ngModel)]="soDto.placeOfReceiptDate" name="placeOfReceiptDate" placeholder="Place Of Receipt Date">
+        </div>
+        <div class="col-lg-4">
+          <label class="input-label">Cargo Ready Date Type<span class="must-filled">*</span></label>
+          <input type="text" class="form-control input-sm" [(ngModel)]="soDto.cargoReadyDateType" name="cargoReadyDateType" placeholder="Cargo Ready Date Type">
+          <input type="date" class="form-control input-sm" [(ngModel)]="soDto.cargoReadyDate" name="cargoReadyDate" placeholder="Cargo Ready Date">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-4">
+          <label class="input-label">Place Of Delivery<span class="must-filled">*</span></label>
+          <input type="text" class="form-control input-sm" [(ngModel)]="soDto.placeOfDelivery" name="placeOfDelivery" placeholder="Place Of Delivery">
+
+        </div>
+        <div class="col-lg-4">
+          <label class="input-label">Pre-assign BL#</label>
+          <input type="text" class="form-control input-sm" [(ngModel)]="soDto.preAssignBlNum" name="preAssignBlNum" placeholder="Pre Assign Bl Num">
+        </div>
+        <div class="col-lg-2">
+          <label class="input-label">BA#</label>
+          <input type="text" class="form-control input-sm" [(ngModel)]="soDto.baNum" name="baNum" placeholder="Ba Num">
+        </div>
+        <div class="col-lg-2">
+          <label class="input-label">Final Receiver</label>
+          <input type="text" class="form-control input-sm" [(ngModel)]="soDto.finalReceiver" name="finalReceiver" placeholder="Final Receiver">
+        </div>
+      </div>
+
+    </div>
+  </form>
+</div>
+<div class="general-info">
+  <div class="title">
+    <span>Additional Service</span>
+  </div>
+  <div class="additional-service-overview">
+    <div class="additional-service-detail" >
+      <div class="icon" style=" width: 25%;float: left;margin-bottom: 10px;line-height: 30px">
+        <span style="border-radius: 4px;background: #706ABB;height: 35px;display: inline-block;padding: 5px 10px 10px 8px"><i class="fa fa-truck" aria-hidden="true" style="color: #FFFFFF;font-size: 24px"></i></span>
+        <span style="color: #272459;
+font-family: Mulish;
+font-weight: 600;
+font-size: 14px;
+line-height: 20px;
+letter-spacing: 0px;
+text-align: left; margin-left: 5px">Export Truck</span>
+      </div>
+      <div class="general-info-detail">
+        <div class="detail-label">
+          <span>From</span>
+        </div>
+        <div class="detail-content">
+          <span>No.248 Yangshupu Road</span>
+        </div>
+      </div>
+      <div class="general-info-detail">
+        <div class="detail-label">
+          <span>To</span>
+        </div>
+        <div class="detail-content">
+          <span>Waigaoqiao T3</span>
+        </div>
+      </div>
+      <div class="general-info-detail">
+        <div class="detail-label">
+          <span>Appointment Time</span>
+        </div>
+        <div class="detail-content">
+          <span>2021-4-30 15:30</span>
+        </div>
+      </div>
+      <div style="clear: both"></div>
+    </div>
+
+    <div class="additional-service-detail" >
+      <div class="icon" style=" width: 25%;float: left;margin-bottom: 10px;line-height: 30px">
+        <span style="border-radius: 4px;background: #706ABB;height: 35px;display: inline-block;padding: 5px 10px 10px 8px"><i class="fa fa-truck" aria-hidden="true" style="color: #FFFFFF;font-size: 24px"></i></span>
+        <span style="color: #272459;
+font-family: Mulish;
+font-weight: 600;
+font-size: 14px;
+line-height: 20px;
+letter-spacing: 0px;
+text-align: left; margin-left: 5px">Export Truck</span>
+      </div>
+      <div class="general-info-detail">
+        <div class="detail-label">
+          <span>From</span>
+        </div>
+        <div class="detail-content">
+          <span>No.248 Yangshupu Road</span>
+        </div>
+      </div>
+      <div class="general-info-detail">
+        <div class="detail-label">
+          <span>To</span>
+        </div>
+        <div class="detail-content">
+          <span>Waigaoqiao T3</span>
+        </div>
+      </div>
+      <div class="general-info-detail">
+        <div class="detail-label">
+          <span>Appointment Time</span>
+        </div>
+        <div class="detail-content">
+          <span>2021-4-30 15:30</span>
+        </div>
+      </div>
+      <div style="clear: both"></div>
+    </div>
+
+    <div style="clear: both"></div>
+  </div>
+  <div style="clear: both"></div>
+</div>
+<div class="general-info">
+  <div class="title">
+    <span>Party Info.</span>
+  </div>
+  <div class="party-info-overview">
+    <div class="party-info-detail">
+      <div class="party-info-detail-title">
+        <span>Shipper</span>
+      </div>
+      <div class="party-info-detail-content">
+        <div class="party-info-detail-row">
+          <label class="input-label col-sm-4 party-label">Name</label>
+          <div class="col-sm-8">
+           <input type="text" class="form-control input-sm party-content" [(ngModel)]="soDto.shipperPartyDto.name" name="name" placeholder="Name">
+          </div>
+        </div>
+        <div class="party-info-detail-row">
+          <label class="input-label col-sm-4 party-label">Name On Doc</label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control input-sm party-content" [(ngModel)]="soDto.shipperPartyDto.nameOnDoc" name="nameOnDoc" placeholder="Name On Doc">
+          </div>
+        </div>
+        <div class="party-info-detail-row">
+          <label class="input-label col-sm-4 party-label">Address</label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control input-sm party-content" [(ngModel)]="soDto.shipperPartyDto.address" name="address" placeholder="Address">
+          </div>
+        </div>
+        <div class="party-info-detail-row">
+          <label class="input-label col-sm-4 party-label">Contact</label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control input-sm party-content" [(ngModel)]="soDto.shipperPartyDto.contact" name="contact" placeholder="Contact">
+          </div>
+        </div>
+        <div class="party-info-detail-row">
+          <label class="input-label col-sm-4 party-label">Phone</label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control input-sm party-content" [(ngModel)]="soDto.shipperPartyDto.phone" name="phone" placeholder="Phone">
+          </div>
+        </div>
+        <div class="party-info-detail-row">
+          <label class="input-label col-sm-4 party-label">Fax</label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control input-sm party-content" [(ngModel)]="soDto.shipperPartyDto.fax" name="fax" placeholder="Fax">
+          </div>
+        </div>
+        <div class="party-info-detail-row">
+          <label class="input-label col-sm-4 party-label">Email</label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control input-sm party-content" [(ngModel)]="soDto.shipperPartyDto.email" name="email" placeholder="Email">
+          </div>
+        </div>
+        <div style="clear: both"></div>
+      </div>
+      <div style="clear: both"></div>
+    </div>
+
+    <div class="party-info-detail">
+      <div class="party-info-detail-title">
+        <span>Booking Party</span>
+      </div>
+      <div class="party-info-detail-content">
+        <div class="party-info-detail-row">
+          <label class="input-label col-sm-4 party-label">Name</label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control input-sm party-content" [(ngModel)]="soDto.bookingPartyDto.name" name="name" placeholder="Name">
+          </div>
+        </div>
+        <div class="party-info-detail-row">
+          <label class="input-label col-sm-4 party-label">Contact</label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control input-sm party-content" [(ngModel)]="soDto.bookingPartyDto.contact" name="contact" placeholder="Contact">
+          </div>
+        </div>
+        <div class="party-info-detail-row">
+          <label class="input-label col-sm-4 party-label">Phone</label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control input-sm party-content" [(ngModel)]="soDto.bookingPartyDto.phone" name="phone" placeholder="Phone">
+          </div>
+        </div>
+        <div class="party-info-detail-row">
+          <label class="input-label col-sm-4 party-label">Fax</label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control input-sm party-content" [(ngModel)]="soDto.bookingPartyDto.fax" name="fax" placeholder="Fax">
+          </div>
+        </div>
+        <div class="party-info-detail-row">
+          <label class="input-label col-sm-4 party-label">Email</label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control input-sm party-content" [(ngModel)]="soDto.bookingPartyDto.email" name="email" placeholder="Email">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="party-info-detail">
+      <div class="party-info-detail-title">
+        <span>Notify Party</span>
+      </div>
+      <div class="party-info-detail-content">
+        <div class="party-info-detail-row">
+          <label class="input-label col-sm-4 party-label">Company Name</label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control input-sm party-content" [(ngModel)]="soDto.notifyPartyDto.companyName" name="companyName" placeholder="Company Name">
+          </div>
+        </div>
+        <div class="party-info-detail-row">
+          <label class="input-label col-sm-4 party-label">Address</label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control input-sm party-content" [(ngModel)]="soDto.notifyPartyDto.address" name="address" placeholder="Address">
+          </div>
+        </div>
+        <div class="party-info-detail-row">
+          <label class="input-label col-sm-4 party-label">Contact</label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control input-sm party-content" [(ngModel)]="soDto.notifyPartyDto.contact" name="contact" placeholder="Contact">
+          </div>
+        </div>
+        <div class="party-info-detail-row">
+          <label class="input-label col-sm-4 party-label">Phone</label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control input-sm party-content" [(ngModel)]="soDto.notifyPartyDto.phone" name="phone" placeholder="Phone">
+          </div>
+        </div>
+        <div class="party-info-detail-row">
+          <label class="input-label col-sm-4 party-label">Fax</label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control input-sm party-content" [(ngModel)]="soDto.notifyPartyDto.fax" name="fax" placeholder="Fax">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="party-info-detail">
+      <div class="party-info-detail-title">
+        <span>Also Notify Party</span>
+      </div>
+      <div class="party-info-detail-content">
+        <div class="party-info-detail-row">
+          <label class="input-label col-sm-4 party-label">Company Name</label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control input-sm party-content" [(ngModel)]="soDto.alsoNotifyPartyDto.companyName" name="companyName" placeholder="Company Name">
+          </div>
+        </div>
+        <div class="party-info-detail-row">
+          <label class="input-label col-sm-4 party-label">Address</label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control input-sm party-content" [(ngModel)]="soDto.alsoNotifyPartyDto.address" name="address" placeholder="Address">
+          </div>
+        </div>
+        <div class="party-info-detail-row">
+          <label class="input-label col-sm-4 party-label">Contact</label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control input-sm party-content" [(ngModel)]="soDto.alsoNotifyPartyDto.contact" name="contact" placeholder="Contact">
+          </div>
+        </div>
+        <div class="party-info-detail-row">
+          <label class="input-label col-sm-4 party-label">Phone</label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control input-sm party-content" [(ngModel)]="soDto.alsoNotifyPartyDto.phone" name="phone" placeholder="Phone">
+          </div>
+        </div>
+        <div class="party-info-detail-row">
+          <label class="input-label col-sm-4 party-label">Fax</label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control input-sm party-content" [(ngModel)]="soDto.alsoNotifyPartyDto.fax" name="fax" placeholder="Fax">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="party-info-detail">
+      <div class="party-info-detail-title">
+        <span>Consignee</span>
+      </div>
+      <div class="party-info-detail-content">
+        <div class="party-info-detail-row">
+          <label class="input-label col-sm-4 party-label">Company Name</label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control input-sm party-content" [(ngModel)]="soDto.consigneeDto.companyName" name="companyName" placeholder="Company Name">
+          </div>
+        </div>
+        <div class="party-info-detail-row">
+          <label class="input-label col-sm-4 party-label">Address</label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control input-sm party-content" [(ngModel)]="soDto.consigneeDto.address" name="address" placeholder="Address">
+          </div>
+        </div>
+        <div class="party-info-detail-row">
+          <label class="input-label col-sm-4 party-label">Contact</label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control input-sm party-content" [(ngModel)]="soDto.consigneeDto.contact" name="contact" placeholder="Contact">
+          </div>
+        </div>
+        <div class="party-info-detail-row">
+          <label class="input-label col-sm-4 party-label">Phone</label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control input-sm party-content" [(ngModel)]="soDto.consigneeDto.phone" name="phone" placeholder="Phone">
+          </div>
+        </div>
+        <div class="party-info-detail-row">
+          <label class="input-label col-sm-4 party-label">Fax</label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control input-sm party-content" [(ngModel)]="soDto.consigneeDto.fax" name="fax" placeholder="Fax">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="party-info-detail">
+      <div class="party-info-detail-title">
+        <span>Factory</span>
+      </div>
+      <div class="party-info-detail-content">
+        <div class="party-info-detail-row">
+          <label class="input-label col-sm-4 party-label">Company Name</label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control input-sm party-content" [(ngModel)]="soDto.factoryDto.companyName" name="companyName" placeholder="Company Name">
+          </div>
+        </div>
+        <div class="party-info-detail-row">
+          <label class="input-label col-sm-4 party-label">Address</label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control input-sm party-content" [(ngModel)]="soDto.factoryDto.address" name="address" placeholder="Address">
+          </div>
+        </div>
+        <div class="party-info-detail-row">
+          <label class="input-label col-sm-4 party-label">Contact</label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control input-sm party-content" [(ngModel)]="soDto.factoryDto.contact" name="contact" placeholder="Contact">
+          </div>
+        </div>
+        <div class="party-info-detail-row">
+          <label class="input-label col-sm-4 party-label">Phone</label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control input-sm party-content" [(ngModel)]="soDto.factoryDto.phone" name="phone" placeholder="Phone">
+          </div>
+        </div>
+        <div class="party-info-detail-row">
+          <label class="input-label col-sm-4 party-label">Fax</label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control input-sm party-content" [(ngModel)]="soDto.factoryDto.fax" name="fax" placeholder="Fax">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="clear: both"></div>
+  </div>
+</div>
+

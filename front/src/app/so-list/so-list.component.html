@@ -1,0 +1,112 @@
+<div class="order-body">
+  <div class="title">
+    <h3>Shipments</h3>
+  </div>
+  <div class="tips">
+    <span style="color: #272459;background-color: #EFF3FA; padding: 6px 10px;border:1px solid #A9ADD2; border-radius: 4px;margin-right: 5px">All  <span style="background-color:#DCE3F1; padding: 2px 4px;color:#272459;margin-right: 10px">20</span></span>
+    <span style="color: #272459;background-color: #FFFFFF; padding: 6px 16px;margin-right: 10px;border-radius: 4px">Approving <span style="background-color:#DCE3F1; padding: 2px 4px;color:#272459;margin-right: 5px">20</span></span>
+    <span style="color: #272459;background-color: #FFFFFF; padding: 6px 16px;margin-right: 10px;border-radius: 4px">Processing <span style="background-color:#DCE3F1; padding: 2px 4px;color:#272459;margin-right: 5px">20</span></span>
+    <span style="color: #D41818;background-color: #FFFFFF; padding: 6px 16px;margin-right: 10px;border-radius: 4px">Pending <span style="background-color:#DCE3F1; padding: 2px 4px;color:#272459;margin-right: 5px">20</span></span>
+    <span style="color: #D41818;background-color: #FFFFFF; padding: 6px 16px;margin-right: 10px;border-radius: 4px">Confirmed <span style="background-color:#DCE3F1; padding: 2px 4px;color:#272459;margin-right: 5px">20</span></span>
+  </div>
+  <div class="search">
+    <div class="form-group">
+      <div class="row">
+        <div class="col-lg-6" style="padding-left: 0;padding-right: 10px">
+          <input type="text" class="form-control input-sm" name="poNum" ngModel="{{poNum}}" (keyup)="searchPo($event)" placeholder="Shipment No.">
+        </div>
+        <div class="col-lg-6" style="padding-left: 0;padding-right: 10px">
+          <input type="text" class="form-control input-sm" name="poNum" ngModel="{{poNum}}" (keyup)="searchPo($event)" placeholder="Shipper">
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--<div class="buttons">-->
+    <!--<div class="left-buttons" style="display: inline">-->
+      <!--<button class="btn btn-danger btn-create-po" routerLink="/so/create" style="width: 170px">Create Booking</button>-->
+      <!--<button class="btn btn-danger btn-upload-csv">Upload CSV</button>-->
+      <!--<button class="btn btn-danger btn-upload-csv" style="background: #4282FF;border: 1px solid #4282FF">Download CSV</button>-->
+    <!--</div>-->
+    <!--<div class="right-buttons" style="float: right; display: inline">-->
+      <!--<button class="btn btn-danger btn-create-po" data-toggle="modal" data-target="#myModal" style="width: 170px;background-color: #FFFFFF;border: 1px solid #4282FF;color: #4282FF;margin-right: 10px">Send Cargo Receipt</button>-->
+      <!--<button class="btn btn-danger btn-create-po" data-toggle="modal" data-target="#myModal" style="width: 170px;background-color: #FFFFFF;border: 1px solid #4282FF;color: #4282FF;margin-right: 10px">Send Cargo Receipt</button>-->
+      <!--<button class="btn btn-danger btn-create-po" data-toggle="modal" data-target="#myModal" style="width: 170px;background-color: #FFFFFF;border: 1px solid #4282FF;color: #4282FF;margin-right: 10px">Send Pre-advice</button>-->
+    <!--</div>-->
+  <!--</div>-->
+  <div class="filters" style="width: 100%">
+    <button class="btn btn-danger btn-create-so" routerLink="/so/create">Create SO</button>
+    <input type="text" class="form-control input-sm search-input" style="width: 16%; margin-left: 0" placeholder="Filter" />
+    <input type="text" class="form-control input-sm search-input" style="width: 16%" placeholder="Buyer" />
+    <input type="text" class="form-control input-sm search-input" style="width: 16%" placeholder="Buyer" />
+    <select class="form-control status-selector" style="width: 16%">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+    </select>
+    <select class="form-control vender-selector" style="width: 16%">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+    </select>
+  </div>
+  <div class="shipments-overview">
+    <div class="shipment-card" *ngFor="let soDto of soDtos" routerLink="/so/detail/{{soDto.soNumber}}" style="padding: 10px 15px;margin-bottom: 15px">
+      <div class="shipment-1" style="width: 30%;display: inline;float: left">
+        <div><span class="shipment-no" style="cursor: pointer" routerLink="/so/detail">Shipment No.{{soDto.soNumber}}</span></div>
+        <div  style="margin-top: 5px"><span class="ref-no">Ref No: </span><span class="ref-no-span">3213012302103</span><span class="ref-no-span">3213012302103</span></div>
+        <div style="margin-top: 15px"><span class="transpotation-type" style="margin-right: 10px">{{soDto.transportMode}}</span> <span class="total-cost">Total Cost:$1232.3</span></div>
+      </div>
+      <div class="shipment-2" style="width: 25%;display: inline;float: left">
+        <div><span class="address">Weber-Stephen France SARL</span></div>
+        <div><span class="address">Gefco France</span></div>
+        <div style="margin-top: 20px"><span class="address">22000KG;25.256CBM,365PCS(20GP)</span></div>
+      </div>
+      <div class="shipment-3"  style="width: 20%;display: inline;float: left">
+        <div><span class="shipment-no">CSCL WINTER 036E</span></div>
+        <div style="margin-top: 10px"><span style="border-radius: 2px;
+border: 1px solid #FE8124;color: #FE8124;
+font-family: Poppins;
+font-weight: 400;
+font-size: 14px;
+line-height: 20px;
+letter-spacing: 0px;
+text-align: left;padding: 0 10px;">In Translt</span></div>
+      </div>
+      <div class="shipment-4"  style="width: 25%;display: inline;float: left">
+        <div><span class="from">Yantian China</span><span class="to">Yantian China</span></div>
+        <div><span class="time">ETD:2020/6/9</span><span class="time" style="float: right">ETD:2020/6/9</span></div>
+        <div><span class="time">ATD:2020/6/9 23:59</span><span class="time" style="float: right">ETD:2020/6/9 23:59</span></div>
+      </div>
+      <div style="clear: both"></div>
+    </div>
+  </div>
+</div>
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Header Name</h4>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <div class="col-sm-12">
+            <select class="form-control" [(ngModel)]="consignee">
+              <option>Disney Theme Park Merchandise-CA</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal" routerLink="/order/{{consignee}}">Create Po</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal -->
+</div>

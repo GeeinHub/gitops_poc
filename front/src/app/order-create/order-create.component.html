@@ -1,0 +1,300 @@
+<!--<div class="create-po-body">-->
+<!--  <div class="title">-->
+<!--    <h3>Create Po</h3>-->
+<!--  </div>-->
+<!--  <ul class="nav nav-tabs">-->
+<!--    <li ><a href="#home" data-toggle="tab">General Info.</a></li>-->
+<!--    <li><a  routerLink="order/items" data-toggle="tab">Items</a></li>-->
+<!--  </ul>-->
+<!--</div>-->
+    <div class="group-name">
+      <h4>Group Name 1</h4>
+    </div>
+    <div class="group">
+      <form class="form-horizontal" id = "my_form_active">
+        <div class="form-group">
+          <div class="row">
+            <div class="col-lg-4 padding35-15">
+              <label class="input-label">Consignee<span class="must-filled">*</span></label>
+              <input type="text" class="form-control input-sm" [(ngModel)]="poDto.consignee" name="consignee" placeholder="Consignee" disabled>
+            </div>
+            <div class="col-lg-4 padding0-15">
+              <label class="input-label">PO#<span class="must-filled">*</span></label>
+              <input type="text" class="form-control input-sm" [(ngModel)]="poDto.poNum" name="poNum" placeholder="PO Number" [disabled]="disable">
+            </div>
+            <div class="col-lg-4 padding0-35">
+              <label class="input-label">Division</label>
+              <input type="text" class="form-control input-sm" placeholder="Division">
+<!--              <input-->
+<!--                class="form-control"-->
+<!--                type="text"-->
+<!--                mwlFlatpickr-->
+<!--                [(ngModel)]="start"-->
+<!--                (ngModelChange)="refresh.next()"-->
+<!--                [altInput]="true"-->
+<!--                [convertModelValue]="true"-->
+<!--                [enableTime]="true"-->
+<!--                dateFormat="Y-m-dTH:i"-->
+<!--                altFormat="F j, Y H:i"-->
+<!--                placeholder="Not set"-->
+<!--              />-->
+<!--              <mwl-calendar-month-view-->
+<!--                [viewDate]="viewDate"-->
+<!--                [events]="events">-->
+<!--              </mwl-calendar-month-view>-->
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4 padding35-15">
+              <label class="input-label">PO Date</label>
+              <input type="date" class="form-control input-sm" [(ngModel)]="poDto.poDate" name="poDate" placeholder="PO Date">
+            </div>
+            <div class="col-md-4 padding0-15">
+              <label class="input-label">Ship Date</label>
+              <input type="date" class="form-control input-sm" [(ngModel)]="poDto.shipDate" name="shipDate" placeholder="Ship Date">
+            </div>
+            <div class="col-md-4 padding0-35">
+              <label class="input-label">Cancel Date</label>
+              <input type="date" class="form-control input-sm" [(ngModel)]="poDto.cancelDate" name="cancelDate" placeholder="Cancel Date">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4 padding35-15">
+              <label class="input-label">PO Vendor</label>
+              <input type="text" class="form-control input-sm" [(ngModel)]="poDto.poVendor" name="poVendor" placeholder="PO Vendor">
+            </div>
+            <div class="col-md-4 padding0-15">
+              <label class="input-label">Buyer</label>
+              <input type="text" class="form-control input-sm" [(ngModel)]="poDto.buyer" name="buyer" placeholder="Buyer">
+            </div>
+            <div class="col-md-4 padding0-35">
+              <label class="input-label">Bill to</label>
+              <input type="text" class="form-control input-sm" [(ngModel)]="poDto.billTo" name="billTo" placeholder="Bill to">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 padding35-15">
+              <label class="input-label">Ship-To Name</label>
+              <input type="text" class="form-control input-sm" [(ngModel)]="poDto.shipToName" name="shipToName" placeholder="Ship-To Name">
+            </div>
+            <div class="col-md-6 padding0-35">
+              <label class="input-label">Ship-To Address</label>
+              <input type="text" class="form-control input-sm" [(ngModel)]="poDto.shipToAddress" name="shipToAddress" placeholder="Ship-To Address">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4 padding35-15">
+              <label class="input-label">Latest Ship Date</label>
+              <input type="text" class="form-control input-sm" [(ngModel)]="poDto.latestShipDate" name="latestShipDate" placeholder="Latest Ship Date">
+            </div>
+            <div class="col-md-4 padding0-15">
+              <label class="input-label">Demand Date</label>
+              <input type="date" class="form-control input-sm" [(ngModel)]="poDto.demandDate" name="demandDate" placeholder="Demand Date">
+            </div>
+            <div class="col-md-4 padding0-35">
+              <label class="input-label">InWhse Date</label>
+              <input type="date" class="form-control input-sm" [(ngModel)]="poDto.inWhseDate" name="inWhseDate" placeholder="InWhse Date">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4 padding35-15">
+              <label class="input-label">Forward Stocking Location Flag</label>
+              <input type="text" class="form-control input-sm" [(ngModel)]="poDto.forwardStockingLocationFlag" name="forwardStockingLocationFlag" placeholder="Forward Stocking Location Flag">
+            </div>
+            <div class="col-md-4 padding0-15">
+              <label class="input-label">Po Status</label>
+              <input type="text" class="form-control input-sm" [(ngModel)]="poDto.poStatus" name="poStatus" placeholder="Demand Date">
+            </div>
+            <div class="col-md-4 padding0-35">
+              <label class="input-label">Po Type</label>
+              <input type="text" class="form-control input-sm" [(ngModel)]="poDto.poType" name="poType" placeholder="InWhse Date">
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="group-name">
+      <h4>Group Name 2</h4>
+    </div>
+    <div class="group">
+      <form class="form-horizontal">
+        <div class="form-group">
+          <div class="row">
+            <div class="col-lg-4 padding35-15">
+              <label class="input-label">Cargo Origin</label>
+              <input type="text" class="form-control input-sm" [(ngModel)]="poDto.cargoOrigin" name="cargoOrigin" placeholder="Cargo Origin">
+            </div>
+            <div class="col-lg-4 padding0-15">
+              <label class="input-label">Cargo Dest.</label>
+              <input type="text" class="form-control input-sm" [(ngModel)]="poDto.cargoDest" name="cargoDest" placeholder="Cargo Dest.">
+            </div>
+            <div class="col-lg-4 padding0-35">
+              <label class="input-label">Disney Origin</label>
+              <input type="text" class="form-control input-sm" [(ngModel)]="poDto.disneyOrigin" name="disneyOrigin" placeholder="Disney Origin">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-6 padding35-15">
+              <label class="input-label">Payment Terms</label>
+              <input type="text" class="form-control input-sm" [(ngModel)]="poDto.paymentTerms" name="paymentTerms" placeholder="Payment Terms">
+            </div>
+            <div class="col-lg-6 padding0-35">
+              <label class="input-label">Dept</label>
+              <input type="text" class="form-control input-sm" [(ngModel)]="poDto.dept" name="dept" placeholder="Dept">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-6 padding35-15">
+              <label class="input-label">SHIP VIA</label>
+              <div class="ship-vias">
+                <div class="ship-via-detail" [ngClass]="{'ship-via-active': choseShipVia == 'sea'}"  (click)="chooseShipVia('sea')">
+                  <div class="icon">
+                    <i class="fa fa-ship" aria-hidden="true"></i>
+                  </div>
+                  <div class="name">
+                    <span>Sea</span>
+                  </div>
+                </div>
+                <div class="ship-via-detail" [ngClass]="{'ship-via-active': choseShipVia == 'air'}"  (click)="chooseShipVia('air')">
+                  <div class="icon">
+                    <i class="fa fa-plane" aria-hidden="true"></i>
+                  </div>
+                  <div class="name">
+                    <span>Air</span>
+                  </div>
+                </div>
+                <div class="ship-via-detail" [ngClass]="{'ship-via-active': choseShipVia == 'truck'}"  (click)="chooseShipVia('truck')">
+                  <div class="icon">
+                    <i class="fa fa-truck" aria-hidden="true"></i>
+                  </div>
+                  <div class="name">
+                    <span>Truck</span>
+                  </div>
+                </div>
+                <div class="ship-via-detail" [ngClass]="{'ship-via-active': choseShipVia == 'railway'}"  (click)="chooseShipVia('railway')">
+                  <div class="icon">
+                    <i class="fa fa-train" aria-hidden="true"></i>
+                  </div>
+                  <div class="name">
+                    <span>Railway</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-2 padding35-15">
+              <label class="input-label">IS DOMESTIC</label>
+              <div class="radio-group">
+                <label class="radio-inline">
+                  <input type="radio" name="isDomestic" [(ngModel)]="poDto.domestic" id="optionsRadios3" value=true > Yes
+                </label>
+                <label class="radio-inline">
+                  <input type="radio" name="isDomestic" [(ngModel)]="poDto.domestic" id="optionsRadios4"  value=false> No
+                </label>
+              </div>
+
+            </div>
+            <div class="col-lg-4 padding35-15">
+              <label class="input-label">FREIGHT PAYMENT</label>
+              <div class="radio-group">
+                <label class="radio-inline">
+                  <input type="radio" name="freightPayment" [(ngModel)]="poDto.freightPayment" id="optionsRadios6" value="collect" > Collect
+                </label>
+                <label class="radio-inline">
+                  <input type="radio" name="freightPayment" [(ngModel)]="poDto.freightPayment" id="optionsRadios5"  value="prepaid"> Prepaid
+                </label>
+                <label class="radio-inline">
+                  <input type="radio" name="freightPayment" [(ngModel)]="poDto.freightPayment" id="optionsRadios7"  value="others"> Others
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-4 padding35-15">
+              <label class="input-label">Trading Terms</label>
+              <input type="text" class="form-control input-sm" [(ngModel)]="poDto.tradingTerms" name="tradingTerms" placeholder="Trading Terms">
+            </div>
+            <div class="col-lg-4 padding0-15">
+              <label class="input-label">Priority</label>
+              <input type="text" class="form-control input-sm" [(ngModel)]="poDto.priority" name="priority" placeholder="Priority">
+            </div>
+            <div class="col-lg-4 padding0-35">
+              <label class="input-label">Handing Party</label>
+              <input type="text" class="form-control input-sm" [(ngModel)]="poDto.handingParty" name="handingParty" placeholder="Handing Party">
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="group-name">
+      <h4>Group Name 3</h4>
+    </div>
+    <div class="group">
+      <form class="form-horizontal">
+        <div class="form-group">
+          <div class="row">
+            <div class="col-lg-6 padding35-15">
+              <label class="input-label">Special Consignee Name</label>
+              <input type="text" class="form-control input-sm" [(ngModel)]="poDto.specialConsigneeNames" name="specialConsigneeName" placeholder="Special Consignee Name">
+            </div>
+            <div class="col-lg-6 padding0-35">
+              <label class="input-label">Original Consignee Name</label>
+              <input type="text" class="form-control input-sm" [(ngModel)]="poDto.originalConsigneeNames" name="originalConsigneeName" placeholder="Original Consignee Name">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-6 padding35-15">
+              <label class="input-label">Consignee Name Identifier</label>
+              <input type="text" class="form-control input-sm" [(ngModel)]="poDto.consigneeNameIdentifier" name="consigneeNameIdentifier" placeholder="Consignee Name Identifier">
+            </div>
+            <div class="col-lg-6 padding0-35">
+              <label class="input-label">Actual Receiver</label>
+              <input type="text" class="form-control input-sm" [(ngModel)]="poDto.actualReceiver" name="actualReceiver" placeholder="Actual Receiver">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 padding35-15">
+            <label class="input-label">Retailer PO Type</label>
+            <input type="text" class="form-control input-sm" [(ngModel)]="poDto.retailerPoType" name="retailerPoType" placeholder="Retailer PO Type">
+          </div>
+          <div class="col-lg-4 padding0-15">
+            <label class="input-label">Retailer Purchase Order</label>
+            <input type="text" class="form-control input-sm" [(ngModel)]="poDto.retailerPurchaseOrder" name="retailerPurchaseOrder" placeholder="Retailer Purchase Order">
+          </div>
+          <div class="col-lg-4 padding0-35">
+            <label class="input-label">Ship-To#</label>
+            <input type="text" class="form-control input-sm" [(ngModel)]="poDto.shipToNum" name="shipToNum" placeholder="Ship-To">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-3 padding35-15">
+            <label class="input-label">Selling Currency</label>
+            <input type="text" class="form-control input-sm" [(ngModel)]="poDto.sellingCurrency" name="sellingCurrency" placeholder="Selling Currency">
+          </div>
+          <div class="col-lg-3 padding0-15">
+            <label class="input-label">Buying Currency</label>
+            <input type="text" class="form-control input-sm" [(ngModel)]="poDto.buyingCurrency" name="buyingCurrency" placeholder="Buying Currency">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-10 padding35-15">
+            <label class="input-label">Remark</label>
+            <textarea class="form-control" [(ngModel)]="poDto.remarks" name="remark" rows="3"></textarea>
+          </div>
+        </div>
+      </form>
+    </div>
+    <!--  <div class="tab-content">-->
+    <!--    <div class="tab-pane active" id="home">-->
+    <!--      <p>我是首页内容</p>-->
+    <!--    </div>-->
+    <!--    <div class="tab-pane" id="profile">-->
+    <!--      <p> 我是最新内容</p>-->
+    <!--    </div>-->
+    <!--    <div class="tab-pane" id="message">-->
+    <!--      <p>我是热门内容</p>-->
+    <!--    </div>-->
+    <!--    <div class="tab-pane" id="settings">-->
+    <!--      <p>我是排行内容</p>-->
+    <!--    </div>-->
+    <!--  </div>-->

@@ -1,0 +1,9 @@
+spring:
+  profiles:
+    active: dev
+  activemq:
+    in-memory: true
+    polled: true
+    packages:
+      trust-all: true
+    #broker-url: tcp://localhost:61616

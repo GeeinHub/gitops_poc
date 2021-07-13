@@ -1,0 +1,19 @@
+<div class="create-po-body">
+  <div class="title">
+    <h3>Create Po</h3>
+  </div>
+<!--  <ul class="nav nav-tabs" role="tablist">-->
+<!--    <li role="presentation" class="active"><a routerLink="./" role="tab" data-toggle="tab">General Info.</a></li>-->
+<!--    <li role="presentation"><a  routerLink="./items" role="tab" data-toggle="tab">Items</a></li>-->
+<!--  </ul>-->
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active"><a (click)="showCreateContentBody()"  role="tab" data-toggle="tab">General Info</a></li>
+    <li role="presentation"><a (click)="showItemsBody()"   role="tab" data-toggle="tab">Items</a></li>
+  </ul>
+</div>
+<app-create-order *ngIf="showCreateBody" [poDto]="poDto"></app-create-order>
+<app-order-items *ngIf="!showCreateBody" [poItemDtos] = "poItemDtos"></app-order-items>
+<div class="footer">
+  <button class="btn-default btn">Cancel</button>
+  <button class="btn-danger btn" (click)="submit()">Submit</button>
+</div>

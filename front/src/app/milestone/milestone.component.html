@@ -1,0 +1,15 @@
+<div class="milestone-flow">
+  <div class="milestone-flow_bd" *ngFor="let milestone of milestones;let is1st = first;let isLast = last">
+    <div class="flow_line_top" [ngClass]="{'transparent' : is1st}">
+    </div>
+    <div class="flow_line_state">
+
+    </div>
+    <div class="flow_line_bottom" [ngClass]="{'transparent' : isLast}">
+
+    </div>
+    <div class="milestone_content">
+
+    </div>
+  </div>
+</div>

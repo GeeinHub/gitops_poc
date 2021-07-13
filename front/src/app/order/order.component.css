@@ -1,0 +1,31 @@
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+  border: 0;
+  background-color: #F7F9FC;
+  border-bottom: 2px solid #F23E57;
+  color: #272459;
+}
+.nav-tabs{
+  border: 0;
+}
+.nav-tabs a{
+  border: 0;
+  color: #272459;
+  border-bottom: 2px solid transparent;
+}
+.tab{
+  margin-top: 20px;
+}
+.footer{
+  margin-top: 20px;
+  margin-bottom: 30px; min-height: 50px
+}
+
+.footer{
+  float: right;
+}
+.footer button{
+  margin-right: 20px;
+}
+a {
+  cursor: pointer;
+}

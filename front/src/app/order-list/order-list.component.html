@@ -1,0 +1,108 @@
+<div class="order-body">
+  <div class="title">
+    <h3>Purchase Order</h3>
+  </div>
+  <div class="overview">
+    <span class="span-buffer">PO Buffer</span>
+    <span class="span-total">Total: </span>
+    <span class="span-total-number">326</span>
+    <button class="btn btn-danger">Maintance</button>
+  </div>
+  <div class="query-conditions">
+    <form class="form-horizontal" id = "my_form_active">
+      <div class="form-group">
+        <div class="row">
+          <div class="col-lg-6" style="padding-left: 15px;padding-right: 10px">
+            <input type="text" class="form-control input-sm" name="poNum" ngModel="{{poNum}}" (keyup)="searchPo($event)" placeholder="PO No">
+          </div>
+          <div class="col-lg-6" style="padding-left: 0;padding-right: 15px">
+            <input type="text" class="form-control input-sm" placeholder="Company No">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6" style="padding-left: 15px;padding-right: 10px">
+            <input type="text" class="form-control input-sm" placeholder="PO No">
+          </div>
+          <div class="col-md-6" style="padding-left: 0;padding-right: 15px">
+            <input type="text" class="form-control input-sm" placeholder="Company No">
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="filters">
+    <button class="btn btn-danger btn-create-po" data-toggle="modal" data-target="#myModal">Create PO</button>
+    <button class="btn btn-danger btn-upload-csv">Upload CSV</button>
+    <input type="text" class="form-control input-sm search-input" placeholder="Seller" />
+    <input type="text" class="form-control input-sm date-picker" placeholder="2021-4-4 - 2021-4-9" />
+    <select class="form-control status-selector">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+    </select>
+    <select class="form-control vender-selector">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+    </select>
+    <button class="btn btn-default btn-filter-column">Filter Column</button>
+    <button class="btn btn-default btn-customize-column">Customize Column</button>
+  </div>
+  <div class="po-table">
+    <table class="table table-hover">
+      <thead>
+      <tr>
+        <th>PO#</th>
+        <th>PO Vendor</th>
+        <th>EXCEPTION</th>
+        <th>CONSIGNEE</th>
+        <th>CARGO READY BY</th>
+        <th>MUST ARRIVE BY</th>
+        <th>BUYER</th>
+        <th>STATUS</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr routerLink="/order/detail/{{poDto.poNum}}" *ngFor="let poDto of poDtos" >
+        <td>{{poDto.poNum}}</td>
+        <td>{{poDto.poVendor}}</td>
+        <td>{{poDto.remarks}}</td>
+        <td>{{poDto.consignee}}</td>
+        <td>{{poDto.cargoDest}}</td>
+        <td>{{poDto.shipDate}}</td>
+        <td>{{poDto.buyer}}</td>
+        <td><span class="status-span">STATUS</span></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Header Name</h4>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <div class="col-sm-12">
+            <select class="form-control" [(ngModel)]="consignee">
+              <option>Disney Theme Park Merchandise-CA</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal" routerLink="/order/{{consignee}}">Create Po</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal -->
+</div>

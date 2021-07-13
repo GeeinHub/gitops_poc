@@ -1,0 +1,54 @@
+<div class="item-info">
+  <div class="title">
+    <span>Item Info.</span>
+  </div>
+  <div class="item-table">
+    <table class="table table-hover">
+      <thead>
+      <tr>
+        <th>SKU#</th>
+        <th>Color</th>
+        <th>Size</th>
+        <th>Description</th>
+        <th>Division</th>
+        <th>Unit Cost</th>
+        <th>Units</th>
+        <th>Ctns</th>
+        <th>Volume</th>
+        <th>Est Unit Cost</th>
+        <th>Vendor Upc</th>
+        <th>Unit Retail</th>
+        <th>Hts Num</th>
+        <th>Long Item Number</th>
+        <th>Sku Service Level</th>
+        <th>Retailer Item Number</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let poItemDto of poItemDtos">
+        <td><input type="text" class="form-control input-sm" [(ngModel)]="poItemDto.skuNum" name="skuNum"></td>
+        <td><input type="text" class="form-control input-sm" [(ngModel)]="poItemDto.color" name="color"></td>
+        <td><input type="text" class="form-control input-sm" [(ngModel)]="poItemDto.size" name="size"></td>
+        <td><input type="text" class="form-control input-sm" [(ngModel)]="poItemDto.description" name="description"></td>
+        <td><input type="text" class="form-control input-sm" [(ngModel)]="poItemDto.division" name="division"></td>
+        <td><input type="text" class="form-control input-sm" [(ngModel)]="poItemDto.unitCost" name="unitCost"></td>
+        <td><input type="text" class="form-control input-sm" [(ngModel)]="poItemDto.units" name="units"></td>
+        <td><input type="text" class="form-control input-sm" [(ngModel)]="poItemDto.ctns" name="ctns"></td>
+        <td><input type="text" class="form-control input-sm" [(ngModel)]="poItemDto.volume" name="volume"></td>
+        <td><input type="text" class="form-control input-sm" [(ngModel)]="poItemDto.estUnitCost" name="estUnitCost"></td>
+        <td><input type="text" class="form-control input-sm" [(ngModel)]="poItemDto.vendorUpc" name="vendorUpc"></td>
+        <td><input type="text" class="form-control input-sm" [(ngModel)]="poItemDto.unitRetail" name="unitRetail"></td>
+        <td><input type="text" class="form-control input-sm" [(ngModel)]="poItemDto.htsNum" name="htsNum"></td>
+        <td><input type="text" class="form-control input-sm" [(ngModel)]="poItemDto.longItemNumber" name="longItemNumber"></td>
+        <td><input type="text" class="form-control input-sm" [(ngModel)]="poItemDto.skuServiceLevel" name="skuServiceLevel"></td>
+        <td><input type="text" class="form-control input-sm" [(ngModel)]="poItemDto.retailerItemNumber" name="retailerItemNumber"></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="operation">
+    <span class="edit-span" (click)="addItem()">Add</span>
+    <span class="edit-span" (click)="deleteItem()">Delete</span>
+    <span>Copy</span>
+  </div>
+</div>

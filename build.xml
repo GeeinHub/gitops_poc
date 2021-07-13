@@ -1,0 +1,16 @@
+<project default="build" name="deploy">
+
+    <target name="build">
+
+        <!--<scp todir="" file=""></scp>-->
+
+        <exec  executable="buildjs.bat" output="./buildjs.log">
+
+
+        </exec>
+
+
+
+    </target>
+
+</project>

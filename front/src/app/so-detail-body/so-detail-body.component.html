@@ -1,0 +1,414 @@
+<div class="route-card">
+  <div class="route" style="width: 35%">
+    <div class="title">
+      <span class="title-span">Shanghai,China</span>
+      <span class="time-span">Aug 17,2021,00:30</span>
+    </div>
+    <div class="content">
+      <span>YangshanSGH Guangdong Terminal</span>
+    </div>
+  </div>
+  <div class="route" style="width: 35%">
+    <div class="title">
+      <span class="title-span">Rotterdam,Netherlands</span>
+      <span class="time-span">Aug 17,2021,00:30</span>
+    </div>
+    <div class="content">
+      <span>Total Terminal International</span>
+    </div>
+  </div>
+  <div class="route" style="width: 20%">
+    <div class="title">
+      <span class="title-span">xxxx London</span>
+    </div>
+    <div class="content">
+      <span>OLE</span>
+    </div>
+  </div>
+  <div class="route" style="width: 10%">
+    <div class="title">
+      <span class="title-span">20' ft</span>
+    </div>
+    <div class="content">
+      <span>x4</span>
+    </div>
+  </div>
+  <div style="clear: both"></div>
+</div>
+<div class="general-info">
+  <div class="title">
+    <span>General Info.</span>
+  </div>
+  <div class="general-info-overview">
+    <div class="general-info-detail">
+      <div class="detail-label">
+        <span>Customer</span>
+      </div>
+      <div class="detail-content">
+        <span>{{soDto.customer == null ? 'N/A' : soDto.customer}}</span>
+      </div>
+    </div>
+    <div class="general-info-detail">
+      <div class="detail-label">
+        <span>Status</span>
+      </div>
+      <div class="detail-content">
+        <span>{{soDto.status == null ? 'N/A' : soDto.status}}</span>
+      </div>
+    </div>
+    <div class="general-info-detail">
+      <div class="detail-label">
+        <span>Business Type</span>
+      </div>
+      <div class="detail-content">
+        <span>{{soDto.businessType == null ? 'N/A' : soDto.businessType}}</span>
+      </div>
+    </div>
+    <div class="general-info-detail">
+      <div class="detail-label">
+        <span>Cargo Type</span>
+      </div>
+      <div class="detail-content">
+        <span>{{soDto.cargoType == null ? 'N/A' : soDto.cargoType}}</span>
+      </div>
+    </div>
+    <div class="general-info-detail">
+      <div class="detail-label">
+        <span>Freight</span>
+      </div>
+      <div class="detail-content">
+        <span>{{soDto.freight == null ? 'N/A' : soDto.freight}}</span>
+      </div>
+    </div>
+    <div class="general-info-detail">
+      <div class="detail-label">
+        <span>Trading Term</span>
+      </div>
+      <div class="detail-content">
+        <span>{{soDto.tradingTerm == null ? 'N/A' : soDto.tradingTerm}}</span>
+      </div>
+    </div>
+    <div class="general-info-detail">
+      <div class="detail-label">
+        <span>Transport Mode</span>
+      </div>
+      <div class="detail-content">
+        <span>{{soDto.transportMode == null ? 'N/A' : soDto.transportMode}}</span>
+      </div>
+    </div>
+    <div class="general-info-detail">
+      <div class="detail-label">
+        <span>Place of Receipt</span>
+      </div>
+      <div class="detail-content">
+        <span>{{soDto.placeOfReceiptCity == null ? 'N/A' : soDto.placeOfReceiptCity}}</span>
+      </div>
+    </div>
+    <div class="general-info-detail">
+      <div class="detail-label">
+        <span>Cargo Ready Date</span>
+      </div>
+      <div class="detail-content">
+        <span>{{soDto.cargoReadyDate == null ? 'N/A' : soDto.cargoReadyDate}}</span>
+      </div>
+    </div>
+    <div class="general-info-detail">
+      <div class="detail-label">
+        <span>BA#</span>
+      </div>
+      <div class="detail-content">
+        <span>{{soDto.baNum == null ? 'N/A' : soDto.baNum}}</span>
+      </div>
+    </div>
+    <div class="general-info-detail">
+      <div class="detail-label">
+        <span>Final Receiver</span>
+      </div>
+      <div class="detail-content">
+        <span>{{soDto.finalReceiver == null ? 'N/A' : soDto.finalReceiver}}</span>
+      </div>
+    </div>
+    <div class="general-info-detail">
+      <div class="detail-label">
+        <span>Pre-assign BL#</span>
+      </div>
+      <div class="detail-content">
+        <span>{{soDto.preAssignBlNum == null ? 'N/A' : soDto.preAssignBlNum}}</span>
+      </div>
+    </div>
+    <div class="clear"></div>
+  </div>
+</div>
+<div class="general-info">
+  <div class="title">
+    <span>Additional Service</span>
+  </div>
+  <div class="additional-service-overview">
+    <div class="additional-service-detail" >
+      <div class="icon" style=" width: 25%;float: left;margin-bottom: 10px;line-height: 30px">
+        <span style="border-radius: 4px;background: #706ABB;height: 35px;display: inline-block;padding: 5px 10px 10px 8px"><i class="fa fa-truck" aria-hidden="true" style="color: #FFFFFF;font-size: 24px"></i></span>
+        <span style="color: #272459;
+font-family: Mulish;
+font-weight: 600;
+font-size: 14px;
+line-height: 20px;
+letter-spacing: 0px;
+text-align: left; margin-left: 5px">Export Truck</span>
+      </div>
+      <div class="general-info-detail">
+        <div class="detail-label">
+          <span>From</span>
+        </div>
+        <div class="detail-content">
+          <span>No.248 Yangshupu Road</span>
+        </div>
+      </div>
+      <div class="general-info-detail">
+        <div class="detail-label">
+          <span>To</span>
+        </div>
+        <div class="detail-content">
+          <span>Waigaoqiao T3</span>
+        </div>
+      </div>
+      <div class="general-info-detail">
+        <div class="detail-label">
+          <span>Appointment Time</span>
+        </div>
+        <div class="detail-content">
+          <span>2021-4-30 15:30</span>
+        </div>
+      </div>
+      <div style="clear: both"></div>
+    </div>
+
+    <div class="additional-service-detail" >
+      <div class="icon" style=" width: 25%;float: left;margin-bottom: 10px;line-height: 30px">
+        <span style="border-radius: 4px;background: #706ABB;height: 35px;display: inline-block;padding: 5px 10px 10px 8px"><i class="fa fa-truck" aria-hidden="true" style="color: #FFFFFF;font-size: 24px"></i></span>
+        <span style="color: #272459;
+font-family: Mulish;
+font-weight: 600;
+font-size: 14px;
+line-height: 20px;
+letter-spacing: 0px;
+text-align: left; margin-left: 5px">Export Truck</span>
+      </div>
+      <div class="general-info-detail">
+        <div class="detail-label">
+          <span>From</span>
+        </div>
+        <div class="detail-content">
+          <span>No.248 Yangshupu Road</span>
+        </div>
+      </div>
+      <div class="general-info-detail">
+        <div class="detail-label">
+          <span>To</span>
+        </div>
+        <div class="detail-content">
+          <span>Waigaoqiao T3</span>
+        </div>
+      </div>
+      <div class="general-info-detail">
+        <div class="detail-label">
+          <span>Appointment Time</span>
+        </div>
+        <div class="detail-content">
+          <span>2021-4-30 15:30</span>
+        </div>
+      </div>
+      <div style="clear: both"></div>
+    </div>
+
+    <div style="clear: both"></div>
+  </div>
+  <div style="clear: both"></div>
+</div>
+<div class="general-info">
+  <div class="title">
+    <span>Party Info.</span>
+  </div>
+  <div class="party-info-overview">
+    <div class="party-info-detail">
+      <div class="party-info-detail-title">
+        <span>Shipper</span>
+      </div>
+      <div class="party-info-detail-content">
+        <div class="party-info-detail-row">
+          <span style="width: 85px;display: inline-block">Name</span>
+          <span>{{soDto.shipperPartyDto.name}}</span>
+        </div>
+        <div class="party-info-detail-row">
+          <span style="width: 85px;display: inline-block">Name On Doc</span>
+          <span>{{soDto.shipperPartyDto.nameOnDoc}}</span>
+        </div>
+        <div class="party-info-detail-row">
+          <span style="width: 85px;display: inline-block">Address</span>
+          <span>{{soDto.shipperPartyDto.address}}</span>
+        </div>
+        <div class="party-info-detail-row">
+          <span style="width: 85px;display: inline-block">Contact</span>
+          <span>{{soDto.shipperPartyDto.contact}}</span>
+        </div>
+        <div class="party-info-detail-row">
+          <span style="width: 85px;display: inline-block">Phone</span>
+          <span>{{soDto.shipperPartyDto.phone}}</span>
+        </div>
+        <div class="party-info-detail-row">
+          <span style="width: 85px;display: inline-block">Fax</span>
+          <span>{{soDto.shipperPartyDto.fax}}</span>
+        </div>
+        <div class="party-info-detail-row">
+          <span style="width: 85px;display: inline-block">Email</span>
+          <span>{{soDto.shipperPartyDto.email}}</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="party-info-detail">
+      <div class="party-info-detail-title">
+        <span>Booking Party</span>
+      </div>
+      <div class="party-info-detail-content">
+        <div class="party-info-detail-row">
+          <span style="width: 85px;display: inline-block">Name</span>
+          <span>{{soDto.bookingPartyDto.name}}</span>
+        </div>
+        <div class="party-info-detail-row">
+          <span style="width: 85px;display: inline-block">Contact</span>
+          <span>{{soDto.bookingPartyDto.contact}}</span>
+        </div>
+        <div class="party-info-detail-row">
+          <span style="width: 85px;display: inline-block">Phone</span>
+          <span>{{soDto.bookingPartyDto.phone}}</span>
+        </div>
+        <div class="party-info-detail-row">
+          <span style="width: 85px;display: inline-block">Fax</span>
+          <span>{{soDto.bookingPartyDto.fax}}</span>
+        </div>
+        <div class="party-info-detail-row">
+          <span style="width: 85px;display: inline-block">Email</span>
+          <span>{{soDto.bookingPartyDto.email}}</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="party-info-detail">
+      <div class="party-info-detail-title">
+        <span>Notify Party</span>
+      </div>
+      <div class="party-info-detail-content">
+        <div class="party-info-detail-row">
+          <span style="width: 85px;display: inline-block">Company Name</span>
+          <span>{{soDto.notifyPartyDto.companyName}}</span>
+        </div>
+        <div class="party-info-detail-row">
+          <span style="width: 85px;display: inline-block">Address</span>
+          <span>{{soDto.notifyPartyDto.address}}</span>
+        </div>
+        <div class="party-info-detail-row">
+          <span style="width: 85px;display: inline-block">Contact</span>
+          <span>{{soDto.notifyPartyDto.contact}}</span>
+        </div>
+        <div class="party-info-detail-row">
+          <span style="width: 85px;display: inline-block">Phone</span>
+          <span>{{soDto.notifyPartyDto.phone}}</span>
+        </div>
+        <div class="party-info-detail-row">
+          <span style="width: 85px;display: inline-block">Fax</span>
+          <span>{{soDto.notifyPartyDto.fax}}</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="party-info-detail">
+      <div class="party-info-detail-title">
+        <span>Also Notify Party</span>
+      </div>
+      <div class="party-info-detail-content">
+        <div class="party-info-detail-row">
+          <span style="width: 85px;display: inline-block">Company Name</span>
+          <span>{{soDto.alsoNotifyPartyDto.companyName}}</span>
+        </div>
+        <div class="party-info-detail-row">
+          <span style="width: 85px;display: inline-block">Address</span>
+          <span>{{soDto.alsoNotifyPartyDto.address}}</span>
+        </div>
+        <div class="party-info-detail-row">
+          <span style="width: 85px;display: inline-block">Contact</span>
+          <span>{{soDto.alsoNotifyPartyDto.contact}}</span>
+        </div>
+        <div class="party-info-detail-row">
+          <span style="width: 85px;display: inline-block">Phone</span>
+          <span>{{soDto.alsoNotifyPartyDto.phone}}</span>
+        </div>
+        <div class="party-info-detail-row">
+          <span style="width: 85px;display: inline-block">Fax</span>
+          <span>{{soDto.alsoNotifyPartyDto.fax}}</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="party-info-detail">
+      <div class="party-info-detail-title">
+        <span>Consignee</span>
+      </div>
+      <div class="party-info-detail-content">
+        <div class="party-info-detail-row">
+          <span style="width: 85px;display: inline-block">Company Name</span>
+          <span>{{soDto.consigneeDto.companyName}}</span>
+        </div>
+        <div class="party-info-detail-row">
+          <span style="width: 85px;display: inline-block">Address</span>
+          <span>{{soDto.consigneeDto.address}}</span>
+        </div>
+        <div class="party-info-detail-row">
+          <span style="width: 85px;display: inline-block">Contact</span>
+          <span>{{soDto.consigneeDto.contact}}</span>
+        </div>
+        <div class="party-info-detail-row">
+          <span style="width: 85px;display: inline-block">Phone</span>
+          <span>{{soDto.consigneeDto.phone}}</span>
+        </div>
+        <div class="party-info-detail-row">
+          <span style="width: 85px;display: inline-block">Fax</span>
+          <span>{{soDto.consigneeDto.fax}}</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="party-info-detail">
+      <div class="party-info-detail-title">
+        <span>Factory</span>
+      </div>
+      <div class="party-info-detail-content">
+        <div class="party-info-detail-row">
+          <span style="width: 85px;display: inline-block">Company Name</span>
+          <span>{{soDto.factoryDto.companyName}}</span>
+        </div>
+        <div class="party-info-detail-row">
+          <span style="width: 85px;display: inline-block">Address</span>
+          <span>{{soDto.factoryDto.address}}</span>
+        </div>
+        <div class="party-info-detail-row">
+          <span style="width: 85px;display: inline-block">Contact</span>
+          <span>{{soDto.factoryDto.contact}}</span>
+        </div>
+        <div class="party-info-detail-row">
+          <span style="width: 85px;display: inline-block">Phone</span>
+          <span>{{soDto.factoryDto.phone}}</span>
+        </div>
+        <div class="party-info-detail-row">
+          <span style="width: 85px;display: inline-block">Fax</span>
+          <span>{{soDto.factoryDto.fax}}</span>
+        </div>
+        <div class="party-info-detail-row">
+          <span style="width: 85px;display: inline-block">Email</span>
+          <span>{{soDto.factoryDto.email}}</span>
+        </div>
+      </div>
+    </div>
+
+    <div style="clear: both"></div>
+  </div>
+</div>

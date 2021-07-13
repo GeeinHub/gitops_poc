@@ -1,0 +1,62 @@
+<div class="item-info">
+  <div class="title">
+    <span>Item Info.</span>
+  </div>
+  <div style="margin-top: 20px" class="po-search">
+    <label for="firstname" class="control-label">Retrieve PO(s)</label>
+    <!--<div class="col-sm-4">-->
+      <input style="width: 150px;display: inline;margin-left: 15px;height: 25px" type="text" class="form-control" id="firstname"
+             placeholder="">
+      <!--<button style="display: inline" type="button" class="btn btn-default">Search</button>-->
+    <!--</div>-->
+  </div>
+  <div class="item-table">
+    <table class="table table-hover">
+      <thead>
+      <tr>
+        <th>PO#</th>
+        <th>SKU#</th>
+        <th>CTNS</th>
+        <th>CTNS(UOM)</th>
+        <th>Units</th>
+        <th>Units(UOM)</th>
+        <th>Division(SKU)</th>
+        <th>Handing Party</th>
+        <th>Net Weight</th>
+        <th>Location Flag</th>
+        <th>Packing</th>
+        <th>Unit/Pack</th>
+        <th>Ship-To#</th>
+        <th>Volume(CBM)</th>
+        <th>Weight(kg)</th>
+        <th>Description</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let soItemDto of soDto.itemDtos">
+        <td><input type="text" class="form-control input-sm" [(ngModel)]="soItemDto.splittedPoItemId" name="splittedPoItemId"></td>
+        <td><input type="text" class="form-control input-sm" [(ngModel)]="soItemDto.skuNum" name="color"></td>
+        <td><input type="text" class="form-control input-sm" [(ngModel)]="soItemDto.ctns" name="size"></td>
+        <td><input type="text" class="form-control input-sm" [(ngModel)]="soItemDto.ctnUom" name="description"></td>
+        <td><input type="text" class="form-control input-sm" [(ngModel)]="soItemDto.units" name="division"></td>
+        <td><input type="text" class="form-control input-sm" [(ngModel)]="soItemDto.unitsUom" name="unitCost"></td>
+        <td><input type="text" class="form-control input-sm" [(ngModel)]="soItemDto.divisionSku" name="units"></td>
+        <td><input type="text" class="form-control input-sm" [(ngModel)]="soItemDto.handingParty" name="ctns"></td>
+        <td><input type="text" class="form-control input-sm" [(ngModel)]="soItemDto.netWeight" name="volume"></td>
+        <td><input type="text" class="form-control input-sm" [(ngModel)]="soItemDto.forwardStockingLocationFlag" name="estUnitCost"></td>
+        <td><input type="text" class="form-control input-sm" [(ngModel)]="soItemDto.packing" name="vendorUpc"></td>
+        <td><input type="text" class="form-control input-sm" [(ngModel)]="soItemDto.unitOrPack" name="unitRetail"></td>
+        <td><input type="text" class="form-control input-sm" [(ngModel)]="soItemDto.shipToNum" name="htsNum"></td>
+        <td><input type="text" class="form-control input-sm" [(ngModel)]="soItemDto.volumeCbm" name="longItemNumber"></td>
+        <td><input type="text" class="form-control input-sm" [(ngModel)]="soItemDto.weight" name="skuServiceLevel"></td>
+        <td><input type="text" class="form-control input-sm" [(ngModel)]="soItemDto.description" name="retailerItemNumber"></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="operation">
+    <span class="edit-span" (click)="addItem()">Add</span>
+    <span class="edit-span" (click)="deleteItem()">Delete</span>
+  </div>
+</div>
+

@@ -1,0 +1,514 @@
+<div class="po-title">
+  <span class="num">PO - {{poDto.poNum}}</span>
+  <span class="edit" (click)="toEdit(poDto.poNum)"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Edit</span>
+  <span class="share"><i class="fa fa-share-square-o" aria-hidden="true"></i>Share</span>
+</div>
+<div class="tab">
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active"><a href="#home" role="tab" data-toggle="tab">General Info</a></li>
+    <li role="presentation"><a href="#profile" role="tab" data-toggle="tab">Items</a></li>
+  </ul>
+</div>
+<div class="milestone-info">
+  <div class="title">
+    <span>Milestone Info.</span>
+  </div>
+  <div class="milestone-overview">
+    <div class="ms-detail-wrapper" *ngFor="let ms of milestones;let isLast = last">
+      <div class="milestone-detail">
+          <div class="icon">
+            <i class="fa fa-ship" aria-hidden="true"></i>
+          </div>
+          <div class="name">
+            <span>{{ms.milestoneCode}}</span>
+          </div>
+        <div class="date">
+            <span>{{ms.expectedDate.toLocaleDateString()}}</span>
+        </div>
+      </div>
+      <div class="milestone-splitter" *ngIf="!isLast">
+        <span>- - - - - - - - - - -</span>
+      </div>
+    </div>
+<!--    <div class="ms-detail-wrapper">-->
+<!--      <div class="milestone-detail">-->
+<!--        <div class="icon">-->
+<!--          <i class="fa fa-ship" aria-hidden="true"></i>-->
+<!--        </div>-->
+<!--        <div class="name">-->
+<!--          <span>Stage Name</span>-->
+<!--        </div>-->
+<!--        <div class="date">-->
+<!--          <span>2021-4-2 14:32:35</span>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <div class="milestone-splitter">-->
+<!--        <span>- - - - - - - - - - -</span>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="ms-detail-wrapper">-->
+<!--      <div class="milestone-detail">-->
+<!--        <div class="icon">-->
+<!--          <i class="fa fa-ship" aria-hidden="true"></i>-->
+<!--        </div>-->
+<!--        <div class="name">-->
+<!--          <span>Stage Name</span>-->
+<!--        </div>-->
+<!--        <div class="date">-->
+<!--          <span>2021-4-2 14:32:35</span>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <div class="milestone-splitter">-->
+<!--        <span>- - - - - - - - - - -</span>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="ms-detail-wrapper">-->
+<!--      <div class="milestone-detail">-->
+<!--        <div class="icon">-->
+<!--          <i class="fa fa-ship" aria-hidden="true"></i>-->
+<!--        </div>-->
+<!--        <div class="name">-->
+<!--          <span>Stage Name</span>-->
+<!--        </div>-->
+<!--        <div class="date">-->
+<!--          <span>2021-4-2 14:32:35</span>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+  </div>
+  <div class="clear"></div>
+</div>
+
+<div class="documents">
+  <div class="title">Documents</div>
+  <div class="document-overview">
+    <div class="document-detail">
+      <div class="icon">
+        <i class="fa fa-file-pdf-o" aria-hidden="true"></i>
+      </div>
+      <div class="name">
+        <span>xxxxxxxxxx.pdf</span>
+      </div>
+      <div class="date">
+        <span>2021-4-2 14:32:35</span>
+      </div>
+    </div>
+
+    <div class="document-detail">
+      <div class="icon">
+        <i class="fa fa-file-word-o" aria-hidden="true"></i>
+      </div>
+      <div class="name">
+        <span>xxxxxxxxxx.pdf</span>
+      </div>
+      <div class="date">
+        <span>2021-4-2 14:32:35</span>
+      </div>
+    </div>
+
+    <div class="document-detail">
+      <div class="icon">
+        <i class="fa fa-file-excel-o" aria-hidden="true"></i>
+      </div>
+      <div class="name">
+        <span>xxxxxxxxxx.pdf</span>
+      </div>
+      <div class="date">
+        <span>2021-4-2 14:32:35</span>
+      </div>
+    </div>
+    <div class="document-add">
+      <div class="icon" data-toggle="modal" data-target="#fileUpload">
+        <span>+</span>
+      </div>
+    </div>
+    <div class="clear"></div>
+  </div>
+</div>
+<div class="general-info">
+  <div class="title">
+    <span>General Info.</span>
+  </div>
+  <div class="general-info-overview">
+    <div class="general-info-detail">
+      <div class="detail-label">
+        <span>Consignee</span>
+      </div>
+      <div class="detail-content">
+        <span>{{poDto.consignee == null ? 'N/A' : poDto.consignee}}</span>
+      </div>
+    </div>
+    <div class="general-info-detail">
+      <div class="detail-label">
+        <span>Po Date</span>
+      </div>
+      <div class="detail-content">
+        <span>{{poDto.poDate == null ? 'N/A' : poDto.poDate}}</span>
+      </div>
+    </div>
+    <div class="general-info-detail">
+      <div class="detail-label">
+        <span>Cancel Date </span>
+      </div>
+      <div class="detail-content">
+        <span>{{poDto.cancelDate == null ? 'N/A' : poDto.cancelDate}}</span>
+      </div>
+    </div>
+    <div class="general-info-detail">
+      <div class="detail-label">
+        <span>Ship Date</span>
+      </div>
+      <div class="detail-content">
+        <span>{{poDto.shipDate == null ? 'N/A' : poDto.shipDate}}</span>
+      </div>
+    </div>
+    <div class="general-info-detail">
+      <div class="detail-label">
+        <span>PO#</span>
+      </div>
+      <div class="detail-content">
+        <span>{{poDto.poNum == null ? 'N/A' : poDto.poNum}}</span>
+      </div>
+    </div>
+    <div class="general-info-detail">
+      <div class="detail-label">
+        <span>Po Vendor</span>
+      </div>
+      <div class="detail-content">
+        <span>{{poDto.poVendor == null ? 'N/A' : poDto.poVendor}}</span>
+      </div>
+    </div>
+    <div class="general-info-detail">
+      <div class="detail-label">
+        <span>Buyer</span>
+      </div>
+      <div class="detail-content">
+        <span>{{poDto.buyer == null ? 'N/A' : poDto.buyer}}</span>
+      </div>
+    </div>
+    <div class="general-info-detail">
+      <div class="detail-label">
+        <span>Lasted Ship Date</span>
+      </div>
+      <div class="detail-content">
+        <span>{{poDto.latestShipDate == null ? 'N/A' : poDto.latestShipDate}}</span>
+      </div>
+    </div>
+    <div class="general-info-detail">
+      <div class="detail-label">
+        <span>Ship-To Name</span>
+      </div>
+      <div class="detail-content">
+        <span>{{poDto.shipToName == null ? 'N/A' : poDto.shipToName}}</span>
+      </div>
+    </div>
+    <div class="general-info-detail">
+      <div class="detail-label">
+        <span>Ship-To Address</span>
+      </div>
+      <div class="detail-content">
+        <span>{{poDto.shipToAddress == null ? 'N/A' : poDto.shipToAddress}}</span>
+      </div>
+    </div>
+    <div class="general-info-detail">
+      <div class="detail-label">
+        <span>Demand Date</span>
+      </div>
+      <div class="detail-content">
+        <span>{{poDto.demandDate == null ? 'N/A' : poDto.demandDate}}</span>
+      </div>
+    </div>
+    <div class="general-info-detail">
+      <div class="detail-label">
+        <span>InWhse Date</span>
+      </div>
+      <div class="detail-content">
+        <span>{{poDto.inWhseDate == null ? 'N/A' : poDto.inWhseDate}}</span>
+      </div>
+    </div>
+    <div class="general-info-detail">
+      <div class="detail-label">
+        <span>Ship Via</span>
+      </div>
+      <div class="detail-content">
+        <span>{{poDto.shipVia == null ? 'N/A' : poDto.shipVia}}</span>
+      </div>
+    </div>
+    <div class="general-info-detail">
+      <div class="detail-label">
+        <span>Bill To</span>
+      </div>
+      <div class="detail-content">
+        <span>{{poDto.shipVia == null ? 'N/A' : poDto.billTo}}</span>
+      </div>
+    </div>
+    <div class="general-info-detail">
+      <div class="detail-label">
+        <span>Cargo Origin</span>
+      </div>
+      <div class="detail-content">
+        <span>{{poDto.cargoOrigin == null ? 'N/A' : poDto.cargoOrigin}}</span>
+      </div>
+    </div>
+    <div class="general-info-detail">
+      <div class="detail-label">
+        <span>Cargo Dest</span>
+      </div>
+      <div class="detail-content">
+        <span>{{poDto.cargoDest == null ? 'N/A' : poDto.cargoDest}}</span>
+      </div>
+    </div>
+    <div class="general-info-detail">
+      <div class="detail-label">
+        <span>Freight Payment</span>
+      </div>
+      <div class="detail-content">
+        <span>{{poDto.freightPayment == null ? 'N/A' : poDto.freightPayment}}</span>
+      </div>
+    </div>
+    <div class="general-info-detail">
+      <div class="detail-label">
+        <span>Disney Origin</span>
+      </div>
+      <div class="detail-content">
+        <span>{{poDto.disneyOrigin == null ? 'N/A' : poDto.disneyOrigin}}</span>
+      </div>
+    </div>
+    <div class="general-info-detail">
+      <div class="detail-label">
+        <span>PO Status</span>
+      </div>
+      <div class="detail-content">
+        <span>{{poDto.poStatus == null ? 'N/A' : poDto.poStatus}}</span>
+      </div>
+    </div>
+    <div class="general-info-detail">
+      <div class="detail-label">
+        <span>Dept</span>
+      </div>
+      <div class="detail-content">
+        <span>{{poDto.dept == null ? 'N/A' : poDto.dept}}</span>
+      </div>
+    </div>
+    <div class="general-info-detail">
+      <div class="detail-label">
+        <span>Po Type</span>
+      </div>
+      <div class="detail-content">
+        <span>{{poDto.poType == null ? 'N/A' : poDto.poType}}</span>
+      </div>
+    </div>
+    <div class="general-info-detail">
+      <div class="detail-label">
+        <span>Is Domestic</span>
+      </div>
+      <div class="detail-content">
+        <span>{{poDto.domestic == null ? 'N/A' : poDto.domestic}}</span>
+      </div>
+    </div>
+    <div class="general-info-detail">
+      <div class="detail-label">
+        <span>Payment Terms</span>
+      </div>
+      <div class="detail-content">
+        <span>{{poDto.paymentTerms == null ? 'N/A' : poDto.paymentTerms}}</span>
+      </div>
+    </div>
+    <div class="general-info-detail">
+      <div class="detail-label">
+        <span>Handing party</span>
+      </div>
+      <div class="detail-content">
+        <span>{{poDto.handingParty == null ? 'N/A' : poDto.handingParty}}</span>
+      </div>
+    </div>
+    <div class="general-info-detail">
+      <div class="detail-label">
+        <span>Priority</span>
+      </div>
+      <div class="detail-content">
+        <span>{{poDto.priority == null ? 'N/A' : poDto.priority}}</span>
+      </div>
+    </div>
+    <div class="general-info-detail">
+      <div class="detail-label">
+        <span>Original Consignee Name</span>
+      </div>
+      <div class="detail-content">
+        <span>{{poDto.originalConsigneeNames == null ? 'N/A' : poDto.originalConsigneeNames}}</span>
+      </div>
+    </div>
+    <div class="general-info-detail">
+      <div class="detail-label">
+        <span>Special Consignee Name</span>
+      </div>
+      <div class="detail-content">
+        <span>{{poDto.specialConsigneeNames == null ? 'N/A' : poDto.specialConsigneeNames}}</span>
+      </div>
+    </div>
+    <div class="general-info-detail">
+      <div class="detail-label">
+        <span>Forward Stocking Location Flag</span>
+      </div>
+      <div class="detail-content">
+        <span>{{poDto.forwardStockingLocationFlag == null ? 'N/A' : poDto.forwardStockingLocationFlag}}</span>
+      </div>
+    </div>
+    <div class="general-info-detail">
+      <div class="detail-label">
+        <span>Actual Receiver</span>
+      </div>
+      <div class="detail-content">
+        <span>{{poDto.actualReceiver == null ? 'N/A' : poDto.actualReceiver}}</span>
+      </div>
+    </div>
+    <div class="general-info-detail">
+      <div class="detail-label">
+        <span>Retailer Purchase Order</span>
+      </div>
+      <div class="detail-content">
+        <span>{{poDto.retailerPurchaseOrder == null ? 'N/A' : poDto.retailerPurchaseOrder}}</span>
+      </div>
+    </div>
+    <div class="general-info-detail">
+      <div class="detail-label">
+        <span>Retailer PO Type</span>
+      </div>
+      <div class="detail-content">
+        <span>{{poDto.retailerPoType == null ? 'N/A' : poDto.retailerPoType}}</span>
+      </div>
+    </div>
+    <div class="general-info-detail">
+      <div class="detail-label">
+        <span>Ship-To#</span>
+      </div>
+      <div class="detail-content">
+        <span>{{poDto.shipToNum == null ? 'N/A' : poDto.shipToNum}}</span>
+      </div>
+    </div>
+    <div class="general-info-detail">
+      <div class="detail-label">
+        <span>Target Reference</span>
+      </div>
+      <div class="detail-content">
+        <span>N/A</span>
+      </div>
+    </div>
+    <div class="general-info-detail">
+      <div class="detail-label">
+        <span>Buying Currency</span>
+      </div>
+      <div class="detail-content">
+        <span>{{poDto.buyingCurrency == null ? 'N/A' : poDto.buyingCurrency}}</span>
+      </div>
+    </div>
+    <div class="general-info-detail">
+      <div class="detail-label">
+        <span>Selling Currency</span>
+      </div>
+      <div class="detail-content">
+        <span>{{poDto.sellingCurrency == null ? 'N/A' : poDto.sellingCurrency}}</span>
+      </div>
+    </div>
+    <div class="general-info-detail">
+      <div class="detail-label">
+        <span>Ship-To Address</span>
+      </div>
+      <div class="detail-content">
+        <span>{{poDto.remarks == null ? 'N/A' : poDto.remarks}}</span>
+      </div>
+    </div>
+    <div class="clear"></div>
+  </div>
+</div>
+
+<div class="ship-info">
+  <div class="title">
+    <span>Ship Info</span>
+  </div>
+  <div class="ship-info-overview">
+    <div class="ship-info-detail">
+      <div class="title">
+        <span>Ordered</span>
+      </div>
+      <div class="content">
+        <span class="value">5628</span><span class="unit">Unites</span><span class="value">0</span><span class="unit">UOM</span>
+      </div>
+      <div class="content">
+        <span class="value">5628</span><span class="unit">Unites</span><span class="value">0</span><span class="unit">UOM</span>
+      </div>
+    </div>
+    <div class="ship-info-detail">
+      <div class="title">
+        <span>Ordered</span>
+      </div>
+      <div class="content">
+        <span class="value">5628</span><span class="unit">Unites</span><span class="value">0</span><span class="unit">UOM</span>
+      </div>
+      <div class="content">
+        <span class="value">5628</span><span class="unit">Unites</span><span class="value">0</span><span class="unit">UOM</span>
+      </div>
+    </div>
+    <div class="ship-info-detail">
+      <div class="title">
+        <span>Ordered</span>
+      </div>
+      <div class="content">
+        <span class="value">5628</span><span class="unit">Unites</span><span class="value">0</span><span class="unit">UOM</span>
+      </div>
+      <div class="content">
+        <span class="value">5628</span><span class="unit">Unites</span><span class="value">0</span><span class="unit">UOM</span>
+      </div>
+    </div>
+    <div class="ship-info-detail">
+      <div class="title">
+        <span>Ordered</span>
+      </div>
+      <div class="content">
+        <span class="value">5628</span><span class="unit">Unites</span><span class="value">0</span><span class="unit">UOM</span>
+      </div>
+      <div class="content">
+        <span class="value">5628</span><span class="unit">Unites</span><span class="value">0</span><span class="unit">UOM</span>
+      </div>
+    </div>
+    <div class="ship-info-detail">
+      <div class="title">
+        <span>Ordered</span>
+      </div>
+      <div class="content">
+        <span class="value">5628</span><span class="unit">Unites</span><span class="value">0</span><span class="unit">UOM</span>
+      </div>
+      <div class="content">
+        <span class="value">5628</span><span class="unit">Unites</span><span class="value">0</span><span class="unit">UOM</span>
+      </div>
+    </div>
+    <div class="ship-info-detail">
+      <div class="title">
+        <span>Ordered</span>
+      </div>
+      <div class="content">
+        <span class="value">5628</span><span class="unit">Unites</span><span class="value">0</span><span class="unit">UOM</span>
+      </div>
+      <div class="content">
+        <span class="value">5628</span><span class="unit">Unites</span><span class="value">0</span><span class="unit">UOM</span>
+      </div>
+    </div>
+    <div class="clear"></div>
+  </div>
+</div>
+<div class="modal fade" id="fileUpload" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">File Upload</h4>
+      </div>
+      <div class="modal-body">
+        <app-upload [refId]="poDto.poNum" [refType]="'PO'"></app-upload>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal -->
+</div>

@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+@import "../node_modules/angular-calendar/css/angular-calendar.css";
+.navbar{
+  background: #FFFFFF !important;
+}
+.btn {
+  width: 145px;
+  height: 30px;
+  padding-top: 4px !important;
+  padding-bottom: 4px !important;
+}
+.title h3{
+  margin-top: 0 !important;
+  color: #272459;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+

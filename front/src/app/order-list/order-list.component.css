@@ -1,0 +1,155 @@
+.title h3{
+  margin-top: 0 !important;
+  color: #272459;
+  font-weight: 600;
+  font-size: 18px;
+}
+.overview{
+  width: 355px;
+  height: 50px;
+  background: #FFFFFF;
+  padding-left: 10px;
+  padding-top: 10px;
+  border: 1px solid #DCE3F1;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+.span-buffer{
+  color: #272459;
+  font-weight: 600;
+  font-size: 14px;
+}
+.span-total{
+  color: #BABACE;
+  margin-left: 25px;
+}
+.span-total-number{
+  color: #272459;
+  font-size: 14px;
+  font-weight: 600;
+  margin-right: 20px;
+}
+.query-conditions{
+  width: 100%;
+  height: 90px;
+  background: #FFFFFF;
+  border: 1px solid #DCE3F1;
+  border-radius: 4px;
+  padding:5px 10px 5px 10px;
+}
+.row{
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+input{
+  border: 1px solid #DCE3F1;
+}
+.filters{
+  float: left;
+  margin-top: 10px;
+}
+.search-input{
+  width: 100px;
+  display: inline;
+  margin-left: 10px;
+}
+.date-picker{
+  display: inline;
+  width: 150px;
+  margin-left: 10px;
+}
+.status-selector{
+  width: 100px;
+  display: inline;
+  margin-left: 10px;
+}
+.vender-selector{
+  display: inline;
+  width: 100px;
+  line-height: 20px;
+ margin-left: 10px;
+}
+select{
+  height: 31px;
+  border: 1px solid #DCE3F1;
+  position: relative;
+  top: 1px;
+}
+.btn-create-po{
+  width: 120px;
+}
+.btn-upload-csv{
+  width: 120px;
+  background: #272459;
+  margin-left: 10px;
+  border: 1px solid #272459;
+}
+.btn-filter-column{
+  height: 30px;
+  padding-top: 4px !important;
+  padding-bottom: 4px !important;
+  border: 1px solid #DCE3F1;
+  margin-left: 10px;
+  color: #A9A9C2;
+}
+
+.btn-customize-column{
+  height: 30px;
+  padding-top: 4px !important;
+  padding-bottom: 4px !important;
+  border: 1px solid #DCE3F1;
+  margin-left: 10px;
+  color: #A9A9C2;
+}
+.po-table{
+  background: #FFFFFF;
+}
+.status-span{
+  border: 1px solid #6DE0B2;
+  color:  #6DE0B2;
+  padding: 2px 6px;
+  font-size: 12px;
+}
+.po-table{
+  margin-top: 55px;
+}
+thead{
+  background: #DCE3F1;
+  border: 0 !important;
+  height: 20px !important;
+}
+tr{
+  border: 0 !important;
+  color: #54547F;
+  font-size: 12px;
+  /*height: 56px;*/
+}
+th{
+  border: 0 !important;
+  font-size: 12px;
+}
+td{
+  border: 0 !important;
+  font-size: 13px;
+  line-height: 36px;
+}
+.btn-filter-column{
+  width: 120px;
+}
+.btn-customize-column{
+  width: 145px;
+}
+.modal-header{
+  border-bottom: 0;
+}
+.modal-footer{
+  border-top: 0;
+}
+.modal-content{
+  margin-top: 260px;
+}
+.modal-body{
+  margin-bottom: 20px;
+}

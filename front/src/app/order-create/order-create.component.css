@@ -1,0 +1,118 @@
+.group-name h4{
+  margin-top: 0 !important;
+  color: #272459;
+  font-weight: 600;
+  font-size: 13px !important;
+}
+.group-name{
+  margin-top: 10px;
+}
+.nav-tabs{
+  border: 0;
+  color: #6A688D;
+}
+.nav-tabs a{
+  border: 0;
+  color: #6A688D;
+}
+.input-label{
+  color: #787697;font-size: 12px;
+}
+input{
+  border: 1px solid #DCE3F1;
+}
+.row{
+  margin-bottom: 20px;
+}
+.footer{
+  float: right;
+}
+.footer button{
+  margin-right: 20px;
+}
+
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+  border: 0;
+  background-color: #F7F9FC;
+  border-bottom: 2px solid #F23E57;
+  color: #272459;
+}
+.nav-tabs{
+  border: 0;
+}
+.nav-tabs a{
+  border: 0;
+  color: #272459;
+  border-bottom: 2px solid transparent;
+}
+.tab{
+  margin-top: 20px;
+}
+.form-horizontal .form-group {
+  margin-right: 0;
+  margin-left: 0;
+}
+.ship-via-detail{
+  background-color: #FFFFFF;
+  border-radius: 4px;
+  border: 1px solid #DCE3F1;
+  padding: 8px 30px;
+  width: 22%;
+  text-align: center;
+  float: left;
+  margin-right: 10px;
+}
+.ship-via-detail .icon i {
+  font-size: 20px;
+  color: #9797B6;
+  margin-bottom: 6px;
+}
+
+.ship-via-detail .name{
+  color: #343263;
+  font-size: 13px;
+}
+.radio-group{
+  margin-top: 10px;
+}
+.radio-group .radio-inline {
+  font-size: 13px;
+  color: #272459;
+  font-weight: 600;
+}
+.radio-group .radio-inline input {
+  height: 18px;
+  width: 18px;
+  position: relative;right: 0;
+  top: 4px;
+  border: 1px solid #DCE3F1;
+}
+textarea {
+  border: 1px solid #DCE3F1;
+}
+.group-name h4{
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+.padding35-15 {
+  padding-left: 35px;padding-right: 15px
+}
+.padding0-35 {
+  padding-left: 0;padding-right: 35px
+}
+.padding0-15 {
+  padding-left: 0;padding-right: 15px
+}
+.footer{
+  margin-bottom: 30px; min-height: 50px
+}
+.must-filled {
+  color: red;
+  margin-left: 2px;
+}
+.ship-via-detail{
+  cursor: pointer;
+}
+.ship-via-active{
+  background-color: #DCE3F1;
+}

@@ -1,0 +1,21 @@
+<div class="create-so-body">
+  <div class="title">
+    <h3>{{title}}</h3>
+  </div>
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active"><a (click)="showGeneralInfoFun()"  role="tab" data-toggle="tab">General</a></li>
+    <li role="presentation"><a (click)="showRoutesFun()"   role="tab" data-toggle="tab">Route</a></li>
+    <li role="presentation"><a (click)="showItemsFun()"   role="tab" data-toggle="tab">Items</a></li>
+    <li role="presentation"><a (click)="showDocumentsFun()"   role="tab" data-toggle="tab">Documents</a></li>
+    <li role="presentation"><a (click)="showContainersFun()"   role="tab" data-toggle="tab">Containers</a></li>
+  </ul>
+  <app-so-body *ngIf="showGeneralInfo" [soDto]="soDto" [disable]="disable"></app-so-body>
+  <app-so-items *ngIf="showItems" [soDto]="soDto"></app-so-items>
+  <app-so-routes *ngIf="showRoutes" [soDto]="soDto"></app-so-routes>
+  <app-so-documents *ngIf="showDocuments"></app-so-documents>
+  <app-so-containers *ngIf="showContainers"></app-so-containers>
+</div>
+<div class="footer">
+  <button class="btn-default btn">Cancel</button>
+  <button class="btn-danger btn" (click)="submit()">Submit</button>
+</div>
