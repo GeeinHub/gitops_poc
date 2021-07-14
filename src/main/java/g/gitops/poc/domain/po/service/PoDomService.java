@@ -47,4 +47,6 @@ public interface PoDomService {
     PoItem updatePoItem(PoItem poItem);
 
     SplittedPoItem createSplittedPoItem(SplittedPoItem splittedPoItem);
+
+    SplittedPoItem splitPoItem(PoItem poItem,int quantity);
 }

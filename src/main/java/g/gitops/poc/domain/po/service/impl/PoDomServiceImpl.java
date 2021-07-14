@@ -10,6 +10,7 @@ import g.gitops.poc.domain.po.service.PoDomService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -85,6 +86,17 @@ public class PoDomServiceImpl implements PoDomService {
 
     @Override
     public SplittedPoItem createSplittedPoItem(SplittedPoItem splittedPoItem){
+        return splittedPoItemRepo.save(splittedPoItem);
+    }
+
+    public SplittedPoItem splitPoItem(PoItem poItem,int quantity){
+        SplittedPoItem splittedPoItem = new SplittedPoItem();
+        splittedPoItem.setCreatedBy("SYSTEMDUMMY");
+        splittedPoItem.setCreatedDate(new Date());
+        splittedPoItem.setLastModifiedBy("SYSTEMDUMMY");
+        splittedPoItem.setLastModifiedDate(new Date());
+        splittedPoItem.setQuantity(quantity);
+        splittedPoItem.setThePoItem(poItem);
         return splittedPoItemRepo.save(splittedPoItem);
     }
 }

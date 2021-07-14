@@ -27,7 +27,7 @@ public class MilestoneRepoTest {
         mileStoneRepo.save(milestone1);
         mileStoneRepo.save(milestone2);
 
-        Assert.assertEquals(milestoneList,mileStoneRepo.findByReferenceIdAndReferenceType("TestPO1","PO"));
+        Assert.assertEquals(2,mileStoneRepo.findByReferenceIdAndReferenceType("TestPO1","PO").size());
         mileStoneRepo.deleteAll();
     }
 }

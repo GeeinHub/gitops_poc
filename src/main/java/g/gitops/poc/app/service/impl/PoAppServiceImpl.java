@@ -127,16 +127,9 @@ public class PoAppServiceImpl implements PoAppService {
     public SplittedPoItem splitPoItem(String poItemId, int quantity){
         PoItem poItem = poDomService.findPoItemById(poItemId);
         if(poItem == null){
-            return null;
+            throw new RuntimeException("missing po item of id:"+poItemId);
         }
-        SplittedPoItem splittedPoItem = new SplittedPoItem();
-        splittedPoItem.setCreatedBy("SYSTEMDUMMY");
-        splittedPoItem.setCreatedDate(new Date());
-        splittedPoItem.setLastModifiedBy("SYSTEMDUMMY");
-        splittedPoItem.setLastModifiedDate(new Date());
-        splittedPoItem.setQuantity(quantity);
-        splittedPoItem.setThePoItem(poItem);
-        return poDomService.createSplittedPoItem(splittedPoItem);
+        return poDomService.splitPoItem(poItem,quantity);
     }
 
     @Override

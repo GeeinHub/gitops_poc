@@ -2,11 +2,14 @@ package g.gitops.poc.app.service;
 
 import g.gitops.poc.app.service.impl.PoAppServiceImpl;
 import g.gitops.poc.domain.document.service.DocumentDomService;
-import g.gitops.poc.domain.milestone.entity.Milestone;
 import g.gitops.poc.domain.milestone.service.MilestoneDomService;
 import g.gitops.poc.domain.po.entity.Po;
+import g.gitops.poc.domain.po.entity.PoItem;
+import g.gitops.poc.domain.po.entity.SplittedPoItem;
 import g.gitops.poc.domain.po.service.PoDomService;
 import g.gitops.poc.infrastructure.common.email.EmailService;
+import g.gitops.poc.infrastructure.common.event.JmsEventPublisher;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -17,15 +20,13 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import java.util.Optional;
-
-import static org.assertj.core.api.Assertions.assertThat;
+import static org.mockito.ArgumentMatchers.eq;
 
 @RunWith(SpringRunner.class)
 public class PoAppServiceTest {
 
-    Po po;
-    Milestone mileStone;
+    private Po po;
+    private PoItem poItem;
     @TestConfiguration
     static class PoAppServiceImplTestContextConfiguration {
         @Bean
@@ -49,6 +50,12 @@ public class PoAppServiceTest {
     @MockBean
     private DocumentDomService documentDomService;
 
+    @MockBean
+    private DocumentAppService documentAppService;
+
+    @MockBean
+    private JmsEventPublisher jmsEventPublisher;
+
 
     @Before
     public void setup() {
@@ -56,30 +63,28 @@ public class PoAppServiceTest {
         po.setCreatedBy("tom");
         po.setId("001");
 
-        mileStone = new Milestone();
-        mileStone.setId("m001");
-//        mileStone.setClassName(Po.class.getName());
-        mileStone.setReferenceId(po.getId());
-
-
-        String emailFrom = "papp@xxxxlogistics.com";
-        String emailTo = "vendor@xxxxlogistics.com";
-        String emailCc = "";
-        String emailBcc = "";
-        String subject = "papp PO Notification";
-        String body = "Dear Vendor, PO# " + po.getId() + " has been created. Please followup. Regards, papp";
+        poItem = new PoItem();
+        poItem.setThePo(po);
+        poItem.setId("POITEM001");
 
         Mockito.when(poDomService.createPo(po)).thenReturn(po);
-        Mockito.when(milestoneDomService.createMilestone(mileStone)).thenReturn(mileStone);
-        Mockito.when(milestoneDomService.getMileStone("m001")).thenReturn(Optional.of(mileStone));
-        Mockito.when(emailService.sendSimpleEmail(emailFrom, emailTo, emailCc, emailBcc, subject, body)).thenReturn(true);
+        Mockito.when(poDomService.findPoItemById(poItem.getId())).thenReturn(poItem);
+        Mockito.when(poDomService.findPoItemById("non-existed")).thenReturn(null);
     }
 
     @Test
-    public void whenCreatePo_thenMileStoneCreatedEmailSent(){
-        Po newPo  = poAppService.createPo(po);
-        assertThat(newPo.getId()).isEqualTo("001");
-        assertThat(milestoneDomService.getMileStone("m001").get().getReferenceId()).isEqualTo(po.getId());
+    public void whenPoItemIdOK_thenSplitOK(){
+        int quantity = 10;
+        SplittedPoItem splittedPoItem = new SplittedPoItem();
+        splittedPoItem.setQuantity(quantity);
+        splittedPoItem.setThePoItem(poItem);
+        Mockito.when(poDomService.splitPoItem(Mockito.any(PoItem.class),eq(quantity))).thenReturn(splittedPoItem);
+        Assert.assertEquals(quantity,poAppService.splitPoItem(poItem.getId(),quantity).getQuantity());
+    }
+
+    @Test(expected = RuntimeException.class)
+    public void whenPoItemIdWrong_thenExceptionThrows(){
+        poAppService.splitPoItem("non-existed",10);
     }
 
 }
