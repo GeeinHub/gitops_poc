@@ -43,7 +43,7 @@ commands:
           command: |
             mvn clean package
             TAG="0.1.${CIRCLE_BUILD_NUM}"
-            docker build -t geeindocker/gitops_poc:$TAG .
+            ./mvnw spring-boot:build-image -Dspring-boot.build-image.imageName=geeindocker/gitops_poc:$TAG
             docker push geeindocker/gitops_poc:$TAG
 
       # store raw content of src code
