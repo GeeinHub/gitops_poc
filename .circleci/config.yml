@@ -52,7 +52,7 @@ workflows:
       - build:
           docker:
             - image: circleci/openjdk:8u242-jdk
-            steps:
+          steps:
               - checkout
               - build-service
                 service-name: "fepoc"
