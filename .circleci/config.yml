@@ -38,7 +38,7 @@ commands:
 #      # push docker image to docker hub
 #      - run: mvn dockerfile:push -Ddocker.image.tag=Build-${CIRCLE_BUILD_NUM}-CI
 
-      -run:
+      - run:
           name: build and push
           command: |
             TAG="0.1.${CIRCLE_BUILD_NUM}"
