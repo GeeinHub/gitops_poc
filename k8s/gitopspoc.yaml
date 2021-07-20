@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gitopspoc
+spec:
+  replicas: 2
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: gitopspoc
+  template:
+    metadata:
+      labels:
+        app: gitopspoc
+    spec:
+      containers:
+        - image: geeindocker/gitops_poc:0.1.26
+          name: gitopspoc
+          ports:
+            - containerPort: 80
